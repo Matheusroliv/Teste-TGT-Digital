@@ -2,6 +2,7 @@ import React from "react"
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Home from "../pages/home"
 import Login from "../pages/login"
+import Profile from "../pages/profile/profile"
 import SignUp from "../pages/signup"
 
 const Routes = () => {
@@ -19,6 +20,10 @@ const Routes = () => {
 
         <Route exact path='/login'>
           <Login />
+        </Route>
+
+        <Route exact path='/profile'>
+          <Profile />
         </Route>
       </Switch>
     </BrowserRouter>
