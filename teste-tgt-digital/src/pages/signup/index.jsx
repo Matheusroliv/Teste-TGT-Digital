@@ -6,7 +6,7 @@ export function SignUp() {
   const history = useHistory()
   const { form, onChange, cleanFields } =
     useForm({
-      name:'',
+      name: '',
       email: '',
       password: '',
       confirmPassword: ''
@@ -14,9 +14,9 @@ export function SignUp() {
 
   const signup = () => {
     alert("Conta criada com sucesso!")
-      window.localStorage.setItem('name', form.name)
-      window.localStorage.setItem('email', form.email)
-      window.localStorage.setItem('password', form.password)
+    window.localStorage.setItem('name', form.name)
+    window.localStorage.setItem('email', form.email)
+    window.localStorage.setItem('password', form.password)
     cleanFields()
   }
 
