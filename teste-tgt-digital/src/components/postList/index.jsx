@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext } from "react"
 import { GlobalContext } from '../../App'
 
 export function PostList({ title }) {

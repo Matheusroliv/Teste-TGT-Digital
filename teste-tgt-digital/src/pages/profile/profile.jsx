@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
-import PostList from "../../components/postList";
+import PostList from "../../components/postList"
 import { GlobalContext } from '../../App'
-import BlogNavigator from "../../components/blogNavigator";
+import BlogNavigator from "../../components/blogNavigator"
 
 export function Profile() {
   const postContext = useContext(GlobalContext)
@@ -14,14 +14,14 @@ export function Profile() {
       <PostList
         title={"Todos os Posts!"}
       />
-      <PostList
+      {/* <PostList
         post={postContext.post.filter((post) => post.author === 'mario')}
         title={"Posts de Mario"}
       />
       <PostList
         post={postContext.post.filter((post) => post.author === 'yoshi')}
         title={"Posts de Yoshi"}
-      />
+      /> */}
     </div>
   );
 }

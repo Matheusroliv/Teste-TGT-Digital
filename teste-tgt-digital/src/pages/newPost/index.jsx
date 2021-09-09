@@ -1,16 +1,25 @@
-import React, { useState } from "react"
-import BlogNavigator from "../../components/blogNavigator";
+import React, { useState, useContext } from "react"
+import BlogNavigator from "../../components/blogNavigator"
+import { GlobalContext } from '../../App'
 
 export function NewPost() {
+  const postContext = useContext(GlobalContext)
   const [title, setTitle] = useState('')
-  const [textContent, setTextContent] = useState('')
+  const [content, setContent] = useState('')
   const [author, setAuthor] = useState('mario')
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const id = postContext.post.length + 1
+    const submitNewPost = { title, content, author, id }
+    postContext.post.push(submitNewPost)
+  }
 
   return (
     <div>
       <BlogNavigator />
       <h1>Adicionar um novo Post</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Título do Post:</label>
         <input
           type="text"
@@ -21,8 +30,8 @@ export function NewPost() {
         <label>Conteúdo:</label>
         <textarea
           required
-          value={textContent}
-          onChange={(event) => setTextContent(event.target.value)}
+          value={content}
+          onChange={(event) => setContent(event.target.value)}
         />
         <label>Autor:</label>
         <select
@@ -35,7 +44,7 @@ export function NewPost() {
         <button>Postar</button>
         <p>Post preview</p>
         <p>{title}</p>
-        <p>{textContent}</p>
+        <p>{content}</p>
         <p>Escrito por {author}</p>
       </form>
     </div>
