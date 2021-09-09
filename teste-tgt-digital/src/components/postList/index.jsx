@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from '../../App'
 
-export function PostList(props) {
+export function PostList({ title }) {
+  const postContext = useContext(GlobalContext)
+
   return (
-      <div>
-        <h2>Todos os Posts!</h2>
-        {props.post.map((posts) => {
-          return (
-            <div key={posts.id}>
-              <h3>{posts.title}</h3>
-              <p>{posts.content}</p>
-              <p>Escrito por {posts.author}</p>
-            </div>
-          )
-        })}
-      </div>
+    <div>
+      <h2>{title}</h2>
+      {postContext.post.map((posts) => {
+        return (
+          <div key={posts.id}>
+            <h3>{posts.title}</h3>
+            <p>{posts.content}</p>
+            <p>Escrito por {posts.author}</p>
+            <button
+              onClick={() => postContext.handleDelete(posts.id)}>
+              delete
+            </button>
+          </div>
+        )
+      })}
+    </div>
   );
 }
 

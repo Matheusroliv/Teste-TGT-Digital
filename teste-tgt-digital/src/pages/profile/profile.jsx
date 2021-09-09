@@ -1,34 +1,25 @@
-import React, { useState } from "react"
+import React, { useContext } from "react"
 import PostList from "../../components/postList";
+import { GlobalContext } from '../../App'
 
 export function Profile() {
+  const postContext = useContext(GlobalContext)
   const name = window.localStorage.getItem('name')
-  const [post, setPost] = useState(
-    [
-      {
-        title: 'Meu novo site!',
-        content: 'lorem ipsum...',
-        author: 'mario',
-        id: 1
-      },
-      {
-        title: 'Bem vindos a festa dev',
-        content: 'lorem ipsum...',
-        author: 'yoshi',
-        id: 2
-      },
-      {
-        title: 'Dicas para Desenvolvedores Web',
-        content: 'lorem ipsum...',
-        author: 'mario',
-        id: 3
-      }
-    ])
 
   return (
     <div>
       <h1>Bem vindo ao seu Blog, {name}</h1>
-      <PostList post={post}/>
+      <PostList
+        title={"Todos os Posts!"}
+      />
+      <PostList
+        post={postContext.post.filter((post) => post.author === 'mario')}
+        title={"Posts de Mario"}
+      />
+      <PostList
+        post={postContext.post.filter((post) => post.author === 'yoshi')}
+        title={"Posts de Yoshi"}
+      />
     </div>
   );
 }
