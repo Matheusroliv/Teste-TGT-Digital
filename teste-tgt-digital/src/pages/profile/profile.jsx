@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import PostList from "../../components/postList";
 import { GlobalContext } from '../../App'
+import BlogNavigator from "../../components/blogNavigator";
 
 export function Profile() {
   const postContext = useContext(GlobalContext)
@@ -8,6 +9,7 @@ export function Profile() {
 
   return (
     <div>
+      <BlogNavigator />
       <h1>Bem vindo ao seu Blog, {name}</h1>
       <PostList
         title={"Todos os Posts!"}
