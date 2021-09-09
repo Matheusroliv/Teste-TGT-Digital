@@ -5,7 +5,7 @@ import Login from "../pages/login"
 import Profile from "../pages/profile/profile"
 import SignUp from "../pages/signup"
 
-const Routes = () => {
+const Router = () => {
 
   return (
     <BrowserRouter>
@@ -30,4 +30,4 @@ const Routes = () => {
   );
 };
 
-export default Routes
+export default Router
