@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Router from "./router"
+import GlobalStyle from "./themes/globalStyle"
 
 export const GlobalContext = React.createContext()
 
@@ -40,6 +41,7 @@ function App() {
   return (
     <>
       <GlobalContext.Provider value={context}>
+        <GlobalStyle />
         <Router />
       </GlobalContext.Provider>
     </>
