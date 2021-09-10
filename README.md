@@ -1,10 +1,10 @@
 # Blog Legal - Frontend
 
 ## Descrição
-Sistema de blog feito em ReactJS para o processo seletivo da TGT Digital
+Sistema de blog feito em ReactJS para o processo seletivo da TGT Digital.
 
 ## Stack
-O sistema possui um mock de dados próprio, não possui API e utiliza NPM como gerenciador de pacotes
+O sistema possui um mock de dados próprio, não possui API e utiliza NPM como gerenciador de pacotes.
 
 ## Pré-requisitos para rodar o sistema localmente
 Para que o sistema seja rodado na sua máquina você precisa realizar os seguintes passos:
@@ -20,25 +20,28 @@ Para que o sistema seja rodado na sua máquina você precisa realizar os seguint
 - - Também é possível testar a mesma versão do projeto aqui: https://blog-legal-tgt.surge.sh/
 
 ## Dentro do código
-Todo o projeto esta localizado na pasta `src`
+Todo o projeto esta localizado na pasta `src`, cada pasta possui seus própios arquivos de rederização como: `index.js` e `style.js`
+
+- Arquivo `App.js`
+- - Rederiza todo o aplicativo e possui o mock de dados utilizados no projeto.
 
 - Pasta `Components`
-- - Possuí dois componentes utilizados no projeto, são eles: o `Header` do projeto que é renderizado nas páginas Profile e de Criação de Posts e a `Lista de Posts` que é renderizada na página Profile.
+- - Possui dois componentes utilizados no projeto, são eles: o `Header` do projeto que é renderizado nas páginas Profile e de Criação de Posts e a `Lista de Posts` que é renderizada na página Profile.
 
 - Pasta `Hooks`
-- - Possuí um Custom Hook de Formulários.
+- - Possui um Custom Hook de Formulários.
 
 - Pasta `Pages`
-- - Possuí todas as páginas do projeto, são elas: `Home`, `Login`, `NewPost`, `Profile`, `Signup`
+- - Possui todas as páginas do projeto, são elas: `Home`, `Login`, `NewPost`, `Profile`, `Signup`
 
 - Pasta `Router`
-- - Possui todo o sitema de navegação entre páginas do projeto
+- - Possuitodo o sitema de navegação entre páginas do projeto.
 
 - Pasta `Services`
-- - Possui uma função que protege as páginas `Profile` e `NewPost` de serem acessadas por usuários não cadastrados
+- - Possui uma função que protege as páginas `Profile` e `NewPost` de serem acessadas por usuários não cadastrados.
 
 - Pasta `Themes`
-- - Possui um estilo global para o projeto
+- - Possui um estilo global para o projeto.
 
 ## Exemplos de uso:
 ### Cadastro: O cadastro é obrigatório.
