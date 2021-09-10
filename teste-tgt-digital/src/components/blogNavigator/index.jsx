@@ -1,5 +1,9 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
+import {
+  HeaderContainer,
+  MenuContainer
+} from './style'
 
 export function BlogNavigator() {
   const history = useHistory()
@@ -9,13 +13,17 @@ export function BlogNavigator() {
   }
 
   return (
-    <div>
-      <h1>Title Blog</h1>
-      <div>
-        <p onClick={() => handleNavMenu('/profile')}>Home</p>
-        <p onClick={() => handleNavMenu('/newpost')}>New Post</p>
-      </div>
-    </div>
+    <>
+
+      <HeaderContainer>
+        <h1>Blog Legal</h1>
+        <MenuContainer>
+          <p onClick={() => handleNavMenu('/profile')}>Home</p>
+          <p onClick={() => handleNavMenu('/newpost')}>Novo Post</p>
+          <p onClick={() => handleNavMenu('/')}>Sair</p>
+        </MenuContainer>
+      </HeaderContainer>
+    </>
   );
 }
 

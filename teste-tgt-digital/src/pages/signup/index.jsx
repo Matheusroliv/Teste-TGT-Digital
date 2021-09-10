@@ -1,6 +1,11 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
 import useForm from "../../hooks/useForm"
+import {
+  SignupPageContainer,
+  BackButtonContainer,
+  CreateAccountButton
+} from './style'
 
 export function SignUp() {
   const history = useHistory()
@@ -30,59 +35,69 @@ export function SignUp() {
   }
 
   return (
-    <div>
+    <SignupPageContainer>
       <h1>Cadastro</h1>
-      <button onClick={history.goBack}>Voltar</button>
+      <BackButtonContainer>
+        <p onClick={history.goBack}>Voltar</p>
+      </BackButtonContainer>
       <div>
         <form onSubmit={submitSignup}>
-          <input
-            name="name"
-            value={form.name}
-            onChange={onChange}
-            placeholder={"Nome"}
-            required
-            type="name"
-          />
-          <input
-            name="email"
-            value={form.email}
-            onChange={onChange}
-            placeholder={"email@email.com"}
-            required
-            type="email"
-          />
-          <input
-            name="password"
-            id="senha"
-            placeholder="Mínimo 6 caracteres"
-            type="password"
-            value={form.password}
-            onChange={onChange}
-            inputProps={{
-              pattern: "[A-Za-z0-9]{6,}",
-              title: "A senha deve conter pelo menos 6 caracteres"
-            }}
-          />
-          <input
-            name="confirmPassword"
-            id="confirmar-senha"
-            placeholder="Confirme a senha anterior"
-            type="password"
-            value={form.confirmPassword}
-            onChange={onChange}
-            inputProps={{
-              pattern: "[A-Za-z0-9]{6,}",
-              title: "A senha deve conter pelo menos 6 caracteres"
-            }}
-          />
           <div>
-            <div>
+            <input
+              name="name"
+              value={form.name}
+              onChange={onChange}
+              placeholder={"Nome"}
+              required
+              type="name"
+            />
+          </div>
+          <div>
+            <input
+              name="email"
+              value={form.email}
+              onChange={onChange}
+              placeholder={"email@email.com"}
+              required
+              type="email"
+            />
+          </div>
+          <div>
+            <input
+              name="password"
+              id="senha"
+              placeholder="Mínimo 6 caracteres"
+              type="password"
+              value={form.password}
+              onChange={onChange}
+              inputProps={{
+                pattern: "[A-Za-z0-9]{6,}",
+                title: "A senha deve conter pelo menos 6 caracteres"
+              }}
+            />
+          </div>
+          <div>
+            <input
+              name="confirmPassword"
+              id="confirmar-senha"
+              placeholder="Confirme a senha anterior"
+              type="password"
+              value={form.confirmPassword}
+              onChange={onChange}
+              inputProps={{
+                pattern: "[A-Za-z0-9]{6,}",
+                title: "A senha deve conter pelo menos 6 caracteres"
+              }}
+            />
+          </div>
+          <div>
+            <CreateAccountButton>
               <button>Criar</button>
-            </div>
+            </CreateAccountButton>
           </div>
         </form>
       </div>
-    </div>
+    </SignupPageContainer>
   );
 }
 

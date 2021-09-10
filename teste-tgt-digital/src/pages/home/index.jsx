@@ -1,5 +1,8 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
+import {
+  HomeContainer
+} from './style'
 
 export function Home() {
   const history = useHistory()
@@ -9,13 +12,11 @@ export function Home() {
   }
 
   return (
-    <div>
-      <h1>HOME</h1>
-      <div>
-        <button onClick={() => switchPageHandle('/login')}>Login</button>
-        <button onClick={() => switchPageHandle('/cadastro')}>Cadastro</button>
-      </div>
-    </div>
+    <HomeContainer>
+      <p onClick={() => switchPageHandle('/login')}>Login</p>
+      <div />
+      <p onClick={() => switchPageHandle('/cadastro')}>Cadastro</p>
+    </HomeContainer>
   );
 }
 
