@@ -4,8 +4,8 @@ export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 800px;
   border-bottom: 1px solid #f2f2f2;
 
   h1 {
@@ -15,7 +15,7 @@ export const HeaderContainer = styled.div`
 export const MenuContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 200px;
+  width: 250px;
   font-size: larger;
 
   p {

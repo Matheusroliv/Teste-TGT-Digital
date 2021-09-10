@@ -6,23 +6,13 @@ export const WelcomeContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   margin-top: 60px;
+  margin-bottom: 60px;
 
   h1 {
-    color: #111625;
+    color: #f1356d;
   }
 `
-export const MenuContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 200px;
-  font-size: larger;
-
-  p {
-    color: #c4c4c4;
-    cursor: pointer;
-
-    &:hover {
-      color: #f1356d;
-    }
-  }
+export const AllPostsContainer = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
 `

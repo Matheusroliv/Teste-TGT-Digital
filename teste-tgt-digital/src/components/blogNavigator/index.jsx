@@ -13,13 +13,17 @@ export function BlogNavigator() {
   }
 
   return (
-    <HeaderContainer>
-      <h1>Blog Legal  </h1>
-      <MenuContainer>
-        <p onClick={() => handleNavMenu('/profile')}>Home</p>
-        <p onClick={() => handleNavMenu('/newpost')}>Novo Post</p>
-      </MenuContainer>
-    </HeaderContainer>
+    <>
+
+      <HeaderContainer>
+        <h1>Blog Legal</h1>
+        <MenuContainer>
+          <p onClick={() => handleNavMenu('/profile')}>Home</p>
+          <p onClick={() => handleNavMenu('/newpost')}>Novo Post</p>
+          <p onClick={() => handleNavMenu('/')}>Sair</p>
+        </MenuContainer>
+      </HeaderContainer>
+    </>
   );
 }
 

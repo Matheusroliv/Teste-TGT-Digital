@@ -1,6 +1,11 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useHistory } from "react-router-dom"
 import useForm from "../../hooks/useForm"
+import {
+  LoginPageContainer,
+  BackButtonContainer,
+  LoginButton
+} from './style'
 
 export function Login() {
   const history = useHistory()
@@ -20,11 +25,13 @@ export function Login() {
   }
 
   return (
-    <div>
+    <LoginPageContainer>
+      <BackButtonContainer>
+        <p onClick={history.goBack}>Voltar</p>
+      </BackButtonContainer>
       <h1>Login</h1>
-      <button onClick={history.goBack}>Voltar</button>
-      <div>
-        <form onSubmit={submitLogin}>
+      <form onSubmit={submitLogin}>
+        <div>
           <input
             name="email"
             value={form.email}
@@ -33,6 +40,8 @@ export function Login() {
             required
             type="email"
           />
+        </div>
+        <div>
           <input
             name="password"
             id="senha"
@@ -41,14 +50,14 @@ export function Login() {
             value={form.password}
             onChange={onChange}
           />
-          <div>
-            <div>
-              <button>Entrar</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+        </div>
+        <div>
+          <LoginButton>
+            <button>Entrar</button>
+          </LoginButton>
+        </div>
+      </form>
+    </LoginPageContainer>
   );
 }
 
